@@ -15,6 +15,7 @@ import {fakeAuthProvider} from "./_helpers/fakeAuth";
 import {ToolbarModule} from "primeng/toolbar";
 import {RippleModule} from "primeng/ripple";
 import {FieldsetModule} from "primeng/fieldset";
+import {SkeletonModule} from "primeng/skeleton";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {FieldsetModule} from "primeng/fieldset";
     ReactiveFormsModule,
     ToolbarModule,
     RippleModule,
-    FieldsetModule
+    FieldsetModule,
+    SkeletonModule
   ],
   providers: [
     fakeAuthProvider
