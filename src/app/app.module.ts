@@ -7,19 +7,30 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { HomeComponent } from './home/home.component';
 
 import {ButtonModule} from "primeng/button";
+import { LoginComponent } from './login/login.component';
+import {HttpClientModule} from "@angular/common/http";
+import {InputTextModule} from "primeng/inputtext";
+import {ReactiveFormsModule} from "@angular/forms";
+import {fakeAuthProvider} from "./_helpers/fakeAuth";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    InputTextModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    fakeAuthProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
