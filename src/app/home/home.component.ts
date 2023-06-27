@@ -19,8 +19,19 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.getCatFacts()
+  }
 
+  onScrollingFinished() {
+    console.log('load more');
+    this.getCatFacts()
+  }
 
+  logout() {
+    this.loginService.logout();
+  }
+
+  getCatFacts(){
     this.loading = true;
     this.catFactsService.getFacts(10).subscribe(result =>{
         // @ts-ignore
@@ -29,13 +40,4 @@ export class HomeComponent implements OnInit{
       }
     );
   }
-
-  logout() {
-    this.loginService.logout();
-  }
-
-  getAdditionalFacts(){
-    this.catFactsService.getFacts(10);
-  }
-
 }

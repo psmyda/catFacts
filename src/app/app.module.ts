@@ -16,12 +16,14 @@ import {ToolbarModule} from "primeng/toolbar";
 import {RippleModule} from "primeng/ripple";
 import {FieldsetModule} from "primeng/fieldset";
 import {SkeletonModule} from "primeng/skeleton";
+import {ScrollTrackerDirective} from "./_helpers/scrollTracker.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ScrollTrackerDirective
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
   </div>
 </p-toolbar>
 <br>
-  <p-fieldset *ngFor="let fact of catFactsCollection; index as i" legend="Cat Fact {{i+1}}" styleClass="mb-2">
+  <p-fieldset *ngFor="let fact of catFactsCollection; index as i" legend="Cat Fact {{i+1}}" styleClass="mb-2" scrollTracker (scrollingFinished)="onScrollingFinished()">
     <p class="sm:w-25rem">
      {{fact}}
     </p>
