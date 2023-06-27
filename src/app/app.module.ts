@@ -12,6 +12,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {InputTextModule} from "primeng/inputtext";
 import {ReactiveFormsModule} from "@angular/forms";
 import {fakeAuthProvider} from "./_helpers/fakeAuth";
+import {ToolbarModule} from "primeng/toolbar";
+import {RippleModule} from "primeng/ripple";
+import {FieldsetModule} from "primeng/fieldset";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import {fakeAuthProvider} from "./_helpers/fakeAuth";
     ButtonModule,
     HttpClientModule,
     InputTextModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToolbarModule,
+    RippleModule,
+    FieldsetModule
   ],
   providers: [
     fakeAuthProvider
