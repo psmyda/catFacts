@@ -16,6 +16,7 @@ import {ToolbarModule} from "primeng/toolbar";
 import {RippleModule} from "primeng/ripple";
 import {FieldsetModule} from "primeng/fieldset";
 import {SkeletonModule} from "primeng/skeleton";
+import { ToastModule } from 'primeng/toast';
 import {ScrollTrackerDirective} from "./_helpers/scrollTracker.directive";
 
 @NgModule({
@@ -36,7 +37,8 @@ import {ScrollTrackerDirective} from "./_helpers/scrollTracker.directive";
     ToolbarModule,
     RippleModule,
     FieldsetModule,
-    SkeletonModule
+    SkeletonModule,
+    ToastModule
   ],
   providers: [
     fakeAuthProvider

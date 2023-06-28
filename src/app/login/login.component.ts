@@ -3,22 +3,26 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoginService} from "../_services/login.service";
 import {first} from "rxjs";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
   loading = false;
   submitted = false;
 
+
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -43,11 +47,10 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: () => {
-          // get return url from query parameters or default to home page
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-          this.router.navigateByUrl(returnUrl);
+          this.router.navigateByUrl('/');
         },
         error: error => {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: "Credentials invalid. Use test/test"});
           this.loading = false;
         }
       });
